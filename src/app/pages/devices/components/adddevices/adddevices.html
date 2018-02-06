@@ -1,0 +1,63 @@
+
+
+<form  #addDeviceForm="ngForm"  class = "ui form">
+    
+    
+        
+    
+        
+    
+        <div class="form-group">
+            <label for="deviceid">DeviceID</label>
+            <input type="text" class="form-control" id="Deviceid"  placeholder="DeviceID" name="Deviceid" ngModel>
+        </div>
+    
+    
+    
+        <div class="form-group">
+            <label for="devicename">Device Name</label>
+            <input type="text" class="form-control" id="DeviceName" placeholder="Device Name" name="DeviceName" ngModel >
+        </div>
+    
+    
+        <div class="form-group">
+            <label for="devicelocation">Device Location</label>
+            <input type="text" class="form-control" id="DeviceLocation" placeholder="Device Location" name="DeviceLocation" ngModel>
+        </div>
+    
+        
+    
+        <div class="form-group">
+                <label for="AccessPermission">Accesible to</label>
+                <select multiple class="form-control" id="AccessPermission" type="text" name="AccessPermission" ngModel >
+                        <option>Student</option>
+                        <option>Faculty</option>
+                        <option>Others</option>
+                        <option>All</option>
+                </select>
+                
+        </div>
+    
+
+        <div class="form-group">
+                <label for="DeviceStatus">Device Status</label>
+                <select class="form-control" id="Status" type="text" name="Status" ngModel >
+                        <option>Active </option>
+                        <option>Out of order</option>
+                        <option>Under maintainance</option>
+                        <option>Yet to be installed</option>
+                </select>
+                
+        </div>
+    
+        
+
+            
+
+
+        <div class="checkbox">
+            <ba-checkbox [(ngModel)]="isChecked" [label]="'I am sure I want to do this'" [ngModelOptions]="{standalone: true}"></ba-checkbox>
+        </div>
+        <button type="submit" class="btn btn-danger" [disabled]="!addDeviceForm.form.valid" (click)="onSubmit(addDeviceForm.value)"  (deleteConfirm)="onDeleteConfirm" >Submit</button>
+        </form>
+    
